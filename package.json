@@ -1,0 +1,16 @@
+{
+  "name": "pinia-vue-mini",
+  "version": "0.0.1",
+  "description": "Another pinia for vue-mini.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "akinoccc <akinochen@foxmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@vue-mini/core": "^1.0.2"
+  }
+}

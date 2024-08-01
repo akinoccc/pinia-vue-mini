@@ -1,0 +1,53 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@vue-mini/core':
+        specifier: ^1.0.2
+        version: 1.0.2
+    devDependencies:
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
+
+packages:
+
+  '@vue-mini/core@1.0.2':
+    resolution: {integrity: sha512-7jPNsVC5wZfgd728Ov3+ipa/vnBtvW711harorVEZz2FvUqSAtBxmFAlCSyoPSnW9ChEGO/9IdzVPx9UPl1kgQ==}
+
+  '@vue-mini/miniprogram-api-typings@3.12.2-patch.1':
+    resolution: {integrity: sha512-corB85OI65uPJyq3zHirI5P8UwgcvNRjms9uT2ZI1G5ZKzgmuHvgYtW0TaGDsJc17AWLRmcdkNO3D1YZyDWM3g==}
+
+  '@vue/reactivity@3.4.35':
+    resolution: {integrity: sha512-Ggtz7ZZHakriKioveJtPlStYardwQH6VCs9V13/4qjHSQb/teE30LVJNrbBVs4+aoYGtTQKJbTe4CWGxVZrvEw==}
+
+  '@vue/shared@3.4.35':
+    resolution: {integrity: sha512-hvuhBYYDe+b1G8KHxsQ0diDqDMA8D9laxWZhNAjE83VZb5UDaXl9Xnz7cGdDSyiHM90qqI/CyGMcpBpiDy6VVQ==}
+
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  '@vue-mini/core@1.0.2':
+    dependencies:
+      '@vue-mini/miniprogram-api-typings': 3.12.2-patch.1
+      '@vue/reactivity': 3.4.35
+
+  '@vue-mini/miniprogram-api-typings@3.12.2-patch.1': {}
+
+  '@vue/reactivity@3.4.35':
+    dependencies:
+      '@vue/shared': 3.4.35
+
+  '@vue/shared@3.4.35': {}
+
+  typescript@5.5.4: {}
