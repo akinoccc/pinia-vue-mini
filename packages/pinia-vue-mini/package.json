@@ -1,0 +1,42 @@
+{
+  "name": "pinia-vue-mini",
+  "version": "0.0.1",
+  "description": "Another pinia for vue-mini.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "pinia",
+    "vue-mini",
+    "vue-mini-pinia",
+    "miniprogram",
+    "store"
+  ],
+  "author": {
+    "name": "akinoccc",
+    "email": "akinochen@foxmail.com"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "@vue-mini/core": "^1.0.2"
+  }
+}
