@@ -5,7 +5,6 @@ import type {
   UnwrapRef,
   WatchOptions,
 } from 'vue-demi';
-import { Pinia } from './rootStore';
 
 /**
  * Generic state of a Store

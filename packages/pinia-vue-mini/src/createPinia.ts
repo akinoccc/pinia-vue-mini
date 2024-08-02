@@ -6,7 +6,7 @@ import {
   ref,
   Ref,
 } from '@vue-mini/core';
-import { StoreGeneric } from './types';
+// import { StoreGeneric } from './types';
 
 type StateTree = Record<string | number | symbol, any>;
 
@@ -47,19 +47,19 @@ export interface Pinia {
 
 export function createPinia(): Pinia {
   const scope = effectScope(true);
-  // NOTE: here we could check the window object for a state and directly set it
-  // if there is anything like it with Vue 3 SSR
   const state = scope.run<Ref<Record<string, StateTree>>>(() =>
     ref<Record<string, StateTree>>({})
   )!;
 
-  const pinia: Pinia = {
+  const pinia: Pinia = markRaw({
     _effectScope: scope,
-    _state: new Map<string, StoreGeneric>(),
+    _state: new Map<string, any>(),
     state,
-  };
+  });
 
   provide('$pinia', pinia);
+
+  console.log('🍍 Pinia actived')
 
   return pinia;
 }

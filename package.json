@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "build": "pnpm run -C packages/pinia-vue-mini build",
-    "dev": "pnpm run -C packages/pinia-vue-mini dev",
+    "dev": "pnpm run -C packages/pinia-vue-mini dev & chokidar 'packages/pinia-vue-mini/dist/**/*' -c 'pnpm run -C packages/playground build'",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",
@@ -26,6 +26,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@stylistic/eslint-plugin": "^2.6.1",
+    "chokidar-cli": "^3.0.0",
     "eslint": "^9.8.0",
     "eslint-config-airbe": "1.0.0-beta.7",
     "lint-staged": "^15.2.7",
