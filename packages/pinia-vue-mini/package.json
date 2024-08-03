@@ -36,7 +36,7 @@
     "access": "public",
     "provenance": true
   },
-  "dependencies": {
+  "peerDependencies": {
     "@vue-mini/core": "^1.0.2"
   }
 }

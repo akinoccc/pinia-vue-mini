@@ -1,20 +1,20 @@
-import path from 'node:path';
-import process from 'node:process';
-import { fileURLToPath } from 'node:url';
-import fs from 'fs-extra';
-import chokidar from 'chokidar';
 import babel from '@babel/core';
 import traverse from '@babel/traverse';
 import t from '@babel/types';
-import { minify } from 'terser';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import terser from '@rollup/plugin-terser';
+import chokidar from 'chokidar';
+import fs from 'fs-extra';
+import { bold, green } from 'kolorist';
+import path from 'node:path';
+import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import postcss from 'postcss';
 import postcssrc from 'postcss-load-config';
 import { rollup } from 'rollup';
-import replace from '@rollup/plugin-replace';
-import terser from '@rollup/plugin-terser';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import { green, bold } from 'kolorist';
+import { minify } from 'terser';
 
 let topLevelJobs = [];
 let bundleJobs = [];
@@ -33,7 +33,11 @@ async function bundleModule(module) {
   if (bundledModules.has(module)) return;
   bundledModules.add(module);
 
+  const { peerDependencies } = await fs.readJson(fileURLToPath(new URL(import.meta.resolve(`${module}/package.json`))), 'utf8');
+
   const bundle = await rollup({
+    input: module,
+    external: peerDependencies ? Object.keys(peerDependencies) : undefined,
     input: module,
     plugins: [
       commonjs(),
