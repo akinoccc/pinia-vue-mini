@@ -1,49 +1,12 @@
 import {
-  type EffectScope,
   effectScope,
   markRaw,
   provide,
   ref,
-  Ref,
+  Ref
 } from '@vue-mini/core';
-// import { StoreGeneric } from './types';
-
-type StateTree = Record<string | number | symbol, any>;
-
-export interface Pinia {
-  /**
-   * root state
-   */
-  state: Ref<Record<string, StateTree>>;
-
-  // /**
-  //  * Adds a store plugin to extend every store
-  //  *
-  //  * @param plugin - store plugin to add
-  //  */
-  // use(plugin: PiniaPlugin): Pinia
-
-  // /**
-  //  * Installed store plugins
-  //  *
-  //  * @internal
-  //  */
-  // _p: PiniaPlugin[]
-
-  /**
-   * Effect scope the pinia is attached to
-   *
-   * @internal
-   */
-  _effectScope: EffectScope;
-
-  /**
-   * Registry of stores used by this pinia.
-   *
-   * @internal
-   */
-  _state: Map<string, StoreGeneric>;
-}
+import { Pinia, piniaSymbol, setActivePinia } from './rootStore';
+import { StateTree } from './types';
 
 export function createPinia(): Pinia {
   const scope = effectScope(true);
@@ -52,14 +15,20 @@ export function createPinia(): Pinia {
   )!;
 
   const pinia: Pinia = markRaw({
-    _effectScope: scope,
-    _state: new Map<string, any>(),
+    _e: scope,
+    _s: new Map<string, any>(),
     state,
   });
 
-  provide('$pinia', pinia);
+  setActivePinia(pinia);
 
-  console.log('🍍 Pinia actived')
+  provide(piniaSymbol, pinia);
 
   return pinia;
+}
+
+export function disposePinia(pinia: Pinia) {
+  pinia._e.stop();
+  pinia._s.clear();
+  pinia.state.value = {};
 }
