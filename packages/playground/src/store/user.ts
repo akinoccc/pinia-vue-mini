@@ -1,20 +1,20 @@
-import { ref } from "@vue-mini/core";
-import { defineStore } from "pinia-vue-mini";
+import { ref } from '@vue-mini/core'
+import { defineStore } from 'pinia-vue-mini'
 
 export const useUserOptionsStore = defineStore('user2', {
   state: () => ({
-    age: 18
-  })
+    age: 18,
+  }),
 })
 
-export const useUserStore = defineStore("user", () => {
-  const name = ref("666");
-  const age = ref(0);
+export const useUserStore = defineStore('user', () => {
+  const name = ref('666')
+  const age = ref(0)
 
   const addAge = () => {
-    age.value++;
+    age.value++
     console.log(age.value)
-  };
+  }
 
-  return { name, age, addAge };
-});
+  return { name, age, addAge }
+})

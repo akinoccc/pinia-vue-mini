@@ -1,10 +1,10 @@
-import { useUserOptionsStore, useUserStore } from "@/store/user";
-import { computed, definePage, reactive, ref, watch } from "@vue-mini/core";
+import { useUserOptionsStore, useUserStore } from '@/store/user'
+import { computed, definePage, reactive, ref, watch } from '@vue-mini/core'
 
 definePage(() => {
-  const greeting = ref("欢迎使用 Vue Mini");
+  const greeting = ref('欢迎使用 Vue Mini')
 
-  let userStore = useUserStore();
+  const userStore = useUserStore()
   const optionsStore = useUserOptionsStore()
 
   function addAge2() {
@@ -18,7 +18,7 @@ definePage(() => {
   })
 
   const test = reactive({
-    age: 4
+    age: 4,
   })
   // const age2 = computed(() => optionsStore.age)
   const age4 = computed(() => test.age)
@@ -34,5 +34,5 @@ definePage(() => {
     age4,
     addAge: userStore.addAge,
     addAge2,
-  };
-});
+  }
+})

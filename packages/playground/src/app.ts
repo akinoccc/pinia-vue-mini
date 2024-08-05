@@ -1,11 +1,11 @@
-import { createApp } from "@vue-mini/core";
-import { createPinia } from "pinia-vue-mini";
+import { createApp } from '@vue-mini/core'
+import { createPinia } from 'pinia-vue-mini'
 
 createApp(() => {
-  console.log("App Launched!");
-  const pinia = createPinia();
+  console.log('App Launched!')
+  const pinia = createPinia()
 
   return {
-    pinia
+    pinia,
   }
-});
+})
