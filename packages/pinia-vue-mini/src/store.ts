@@ -1,6 +1,33 @@
-import { computed, ComputedRef, effectScope, EffectScope, inject, isReactive, isRef, markRaw, reactive, toRaw, toRefs, UnwrapRef } from '@vue-mini/core'
+import {
+  computed,
+  ComputedRef,
+  effectScope,
+  EffectScope,
+  inject,
+  isReactive,
+  isRef,
+  markRaw,
+  reactive,
+  toRaw,
+  toRefs,
+  UnwrapRef,
+} from '@vue-mini/core'
 import { activePinia, Pinia, piniaSymbol, setActivePinia } from './rootStore'
-import { _ActionsTree, _ExtractActionsFromSetupStore, _ExtractGettersFromSetupStore, _ExtractStateFromSetupStore, _GettersTree, _Method, _StoreWithState, DefineSetupStoreOptions, DefineStoreOptions, StateTree, Store, StoreDefinition, StoreGeneric } from './types'
+import {
+  _ActionsTree,
+  _ExtractActionsFromSetupStore,
+  _ExtractGettersFromSetupStore,
+  _ExtractStateFromSetupStore,
+  _GettersTree,
+  _Method,
+  _StoreWithState,
+  DefineSetupStoreOptions,
+  DefineStoreOptions,
+  StateTree,
+  Store,
+  StoreDefinition,
+  StoreGeneric,
+} from './types'
 
 // interface DefineStoreOptions {
 //   state: () => StateTree;
@@ -127,8 +154,6 @@ function createOptionsStore<
 
   const initialState: StateTree | undefined = pinia.state.value[id]
 
-  let store: any
-
   function setup() {
     if (!initialState)
       pinia.state.value[id] = state ? state() : {}
@@ -158,8 +183,7 @@ function createOptionsStore<
     ) as any
   }
 
-  store = createSetupStore(id, setup, pinia, true)
-  return store
+  return createSetupStore(id, setup, pinia, true)
 }
 
 function isComputed<T>(value: ComputedRef<T> | unknown): value is ComputedRef<T>

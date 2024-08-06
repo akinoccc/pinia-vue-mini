@@ -1,4 +1,4 @@
-import defineConfig from "eslint-config-airbe";
+import defineConfig from 'eslint-config-airbe'
 
 export default defineConfig({
   js: {
@@ -11,5 +11,13 @@ export default defineConfig({
   },
   stylistic: true,
   importx: true,
-  ignores: ['**/dist/*', '**/node_modules/*'],
+  ignores: ['**/dist/*', '**/node_modules/*', 'packages/playground/**'],
+}, {
+  languageOptions: {
+    parserOptions: {
+      projectService: {
+        allowDefaultProject: ['*.{js,mjs}', 'tsconfig.json', 'package.json'],
+      },
+    },
+  },
 })
