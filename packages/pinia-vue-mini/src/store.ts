@@ -249,8 +249,9 @@ function createSetupStore<
           // probably a reactive object, lets recursively assign
           // @ts-expect-error: prop is unknown
             mergeReactiveObjects(prop, initialState[key])
-          
+
         pinia.state.value[$id][key] = prop
+        console.log(pinia.state.value[$id])
       }
   }
   
@@ -258,8 +259,6 @@ function createSetupStore<
   // allows retrieving reactive objects with `storeToRefs()`. Must be called after assigning to the reactive object.
   // Make `storeToRefs()` work with `reactive()` #799
   Object.assign(toRaw(store), setupStore)
-  
-  console.log(store)
 
   return store
 }
