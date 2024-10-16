@@ -9,7 +9,7 @@
     "dev:lib": "pnpm run -C packages/pinia-vue-mini dev",
     "build:lib": "pnpm run -C packages/pinia-vue-mini build",
     "build:playground": "pnpm run -C packages/playground build",
-    "dev": "pnpm dev:lib & chokidar 'packages/pinia-vue-mini/dist/**/*' -c 'pnpm build:playground' & chokidar 'packages/playground/src/**/*' -c 'pnpm build:playground'",
+    "dev": "chokidar  'packages/pinia-vue-mini/src/**/*' pnpm dev:lib & chokidar 'packages/pinia-vue-mini/dist/**/*' -c 'pnpm build:playground' & chokidar 'packages/playground/src/**/*' -c 'pnpm build:playground'",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit",

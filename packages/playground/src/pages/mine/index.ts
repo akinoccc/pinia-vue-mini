@@ -1,9 +1,11 @@
-import { defineComponent, ref } from '@vue-mini/core';
+import { useTestStore } from "@/store/test";
+import { defineComponent } from '@vue-mini/core';
 
 defineComponent(() => {
-  const greeting = ref('希望你会喜欢');
-
+  const {count, doubleCount, increment} = useTestStore()
   return {
-    greeting,
+    count,
+    doubleCount,
+    increment,
   };
 });

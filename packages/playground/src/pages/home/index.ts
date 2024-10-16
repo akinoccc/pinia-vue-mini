@@ -1,12 +1,12 @@
+import { useTestStore } from "@/store/test";
 import { defineComponent } from '@vue-mini/core';
-import {useTestStore} from "@/store/test";
+import { storeToRefs } from 'pinia-vue-mini';
 
 defineComponent(() => {
-  const {count, doubleCount, increment} = useTestStore()
-  console.log(count, doubleCount, increment)
+  const store = storeToRefs(useTestStore())
+  const store2 = useTestStore()
   return {
-    count,
-    doubleCount,
-    increment,
+    ...store,
+    increment: store2.increment,
   };
 });

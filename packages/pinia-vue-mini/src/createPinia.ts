@@ -19,10 +19,11 @@ export function createPinia(): Pinia {
     _s: new Map<string, any>(),
     state,
   })
-
   setActivePinia(pinia)
 
   provide(piniaSymbol, pinia)
+
+  console.log('🍍 Pinia Launched')
 
   return pinia
 }

@@ -1,5 +1,5 @@
-import {defineStore} from "pinia-vue-mini";
-import {computed, ref} from "@vue-mini/core";
+import { computed, ref } from "@vue-mini/core";
+import { defineStore } from "pinia-vue-mini";
 
 export const useTestStore = defineStore("test", () => {
   const count = ref(0)
@@ -10,6 +10,7 @@ export const useTestStore = defineStore("test", () => {
   }
 
   return {
+    aaa: 1,
     count,
     doubleCount,
     increment

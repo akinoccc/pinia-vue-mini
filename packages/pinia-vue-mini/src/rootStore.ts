@@ -1,5 +1,4 @@
 import { EffectScope, inject, InjectionKey, Ref } from '@vue-mini/core'
-import { StoreGeneric } from './types'
 
 export const piniaSymbol = Symbol() as InjectionKey<Pinia>
 
@@ -8,13 +7,6 @@ export interface Pinia {
      * root state
      */
   state: Ref<Record<string, any>>
-  
-  // /**
-  //  * Installed store plugins
-  //  *
-  //  * @internal
-  //  */
-  // _p: PiniaPlugin[]
   
   /**
      * Effect scope the pinia is attached to
@@ -28,14 +20,13 @@ export interface Pinia {
      *
      * @internal
      */
-  _s: Map<string, StoreGeneric>
+  _s: Map<string, any>
 }
 
 export let activePinia: Pinia | undefined
 
 export function setActivePinia(pinia?: Pinia) {
   activePinia = pinia
-  console.log('🍍 Pinia actived.')
 }
 
 export function getActivePinia(): Pinia | undefined {
