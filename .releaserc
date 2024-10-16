@@ -21,7 +21,7 @@
       "@semantic-release/git",
       {
         "assets": [
-          "package.json",
+          "./packages/pinia-vue-mini/package.json",
           "CHANGELOG.md"
         ],
         "message": "chore(release): v${nextRelease.version} \n\n${nextRelease.notes}"

@@ -79,7 +79,7 @@ definePage(() => {
 ```
 
 > [!WARNING]
-> 和pinia一样，直接结构 store 会丢失响应式，如需要响应式，请使用 `storeToRefs` 或 使用 `.[prop name]` 的形式单独赋值返回
+> 和 Pinia 一样，直接结构 store 会丢失响应式，如需要响应式，请使用 `storeToRefs` 或 使用 `.[prop name]` 的形式单独赋值返回
 
 **以下用法会导致响应式丢失**
 
@@ -99,7 +99,7 @@ definePage(() => {
 
 **storeToRefs**
 
-为了 store 可以解构使用，我们和 pinia 一样，提供了 `storeToRefs` 方法，该方法会返回一个引用对象，包含 store 的所有 state、 getter。类似于 toRefs()，所以 method 和非响应式属性会被完全忽略。
+为了 store 可以解构使用，我们和 Pinia 一样，提供了 `storeToRefs` 方法，该方法会返回一个引用对象，包含 store 的所有 state、 getter。类似于 toRefs()，所以 method 和非响应式属性会被完全忽略。
 
 ```ts
 // page.ts
