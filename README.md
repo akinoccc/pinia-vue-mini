@@ -1,9 +1,9 @@
 # pinia-vue-mini
 
+另一个适配 [vue-mini](https://github.com/vue-mini/vue-mini) 的 Pinia。
+
 > [!IMPORTANT]
 > 项目当前处于 `Beta` 阶段
-
-另一个适配 [vue-mini](https://github.com/vue-mini/vue-mini) 的 Pinia.
 
 ## 安装
 
