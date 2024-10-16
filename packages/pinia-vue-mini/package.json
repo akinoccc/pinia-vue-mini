@@ -16,6 +16,9 @@
     },
     "./package.json": "./package.json"
   },
+  "repository": {
+    "url": "git+https://github.com/akinoccc/pinia-vue-mini.git"
+  },
   "keywords": [
     "pinia",
     "vue-mini",
@@ -27,6 +30,7 @@
     "name": "akinoccc",
     "email": "akinochen@foxmail.com"
   },
+  
   "license": "Apache-2.0",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
