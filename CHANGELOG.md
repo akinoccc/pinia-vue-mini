@@ -1,3 +1,10 @@
+# [1.0.0-beta.2](https://github.com/akinoccc/pinia-vue-mini/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-10-16)
+
+
+### Bug Fixes
+
+* **release:** incorrectly published ([09afa20](https://github.com/akinoccc/pinia-vue-mini/commit/09afa20413da70679f06f56e316687dd434b9473))
+
 # 1.0.0-beta.1 (2024-10-16)
 
 
