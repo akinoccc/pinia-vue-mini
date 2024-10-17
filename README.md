@@ -79,7 +79,7 @@ definePage(() => {
 ```
 
 > [!WARNING]
-> 和 Pinia 一样，直接结构 store 会丢失响应式，如需要响应式，请使用 `storeToRefs` 或 使用 `.[prop name]` 的形式单独赋值返回
+> 和 Pinia 一样，直接解构 store 会丢失响应式，如需要响应式，请使用 `storeToRefs` 或 使用 `.[prop name]` 的形式单独赋值返回
 
 **以下用法会导致响应式丢失**
 
