@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/akinoccc/pinia-vue-mini/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-10-23)
+
+
+### Features
+
+* support data persistence ([4c3d483](https://github.com/akinoccc/pinia-vue-mini/commit/4c3d4831511e9bd39db19a5f69ddbb4678347db2))
+
 # [1.0.0-beta.2](https://github.com/akinoccc/pinia-vue-mini/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-10-16)
 
 

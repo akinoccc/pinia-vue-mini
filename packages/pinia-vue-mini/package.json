@@ -1,6 +1,6 @@
 {
   "name": "pinia-vue-mini",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Another pinia for vue-mini.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
