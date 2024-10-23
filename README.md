@@ -99,7 +99,7 @@ definePage(() => {
 
 **storeToRefs**
 
-为了 store 可以解构使用，我们和 Pinia 一样，提供了 `storeToRefs` 方法，该方法会返回一个引用对象，包含 store 的所有 state、 getter。类似于 toRefs()，所以 method 和非响应式属性会被完全忽略。
+为了 store 可以解构使用，pinia-vue-mini 和 Pinia 一样，提供了 `storeToRefs` 方法，该方法会返回一个引用对象，包含 store 的所有 state、 getter。类似于 toRefs()，所以 method 和非响应式属性会被完全忽略。
 
 ```ts
 // page.ts
@@ -117,4 +117,22 @@ definePage(() => {
 })
 ```
 
+### 数据持久化
+
+pinia-vue-mini 支持数据持久化，只需在 `defineStore` 使用 `persist` 配置即可。
+
+```ts
+import { defineStore } from 'pinia-vue-mini'
+
+export const useCounterStore = defineStore('counter', () => {
+  const count = ref(0)
+
+  return { count }
+}, { 
+  persist: true 
+})
+```
+
+> [!WARNING]
+> 目前只支持 `ref` 和 `reactive` 类型的数据持久化，暂不支持其他类型。
 
